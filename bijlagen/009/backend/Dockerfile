@@ -1,0 +1,11 @@
+FROM node
+ENV MYSQL_HOST=localhost
+ENV MYSQL_USER=steven
+ENV MYSQL_PWD=123
+ENV MYSQL_ROOT_PASSWORD=123
+ENV MYSQL_DB=test
+ENV MYSQL_STORAGE=mysql
+WORKDIR /app
+COPY . .
+RUN npm i
+CMD ["node", "index.js"]
