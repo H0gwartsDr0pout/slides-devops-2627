@@ -1,0 +1,37 @@
+services:
+  frontend:
+    build: ./frontend
+    ports:
+      - "8080:80"
+    environment:
+      STORAGE: mysql
+    depends_on:
+      - backend
+    networks:
+      - labo-5
+
+  backend:
+    build: ./backend
+    environment:
+      STORAGE: mysql
+      MYSQL_HOST: mysql
+      MYSQL_USER: steven
+      MYSQL_PWD: "123"
+      MYSQL_DB: test
+    depends_on:
+      - mysql
+    networks:
+      - labo-5
+
+  mysql:
+    build: ./db
+    networks:
+      - labo-5
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
+
+networks:
+  labo-5:

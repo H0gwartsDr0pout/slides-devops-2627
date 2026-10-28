@@ -1,12 +1,12 @@
 ## Situatie
 
-Je werkt voor ACME. Ze hebben onlangs een todo-applicatie ontwikkeld. 
+Je werkt voor ACME. Ze hebben onlangs een todo-applicatie ontwikkeld.
 Je wordt gevraagd om een DevOps pipeline uit te werken.
 
 Er zijn twee onderdelen: backend en frontend. Er is geen authenticatie.
 
-De backend is een NodeJs applicatie die de API host. De backend luistert op poort 3000. 
-De backend draait standaard in-memory. Met andere woorden, de taken worden enkel opgeslagen in geheugen, niet op disk. 
+De backend is een NodeJs applicatie die de API host. De backend luistert op poort 3000.
+De backend draait standaard in-memory. Met andere woorden, de taken worden enkel opgeslagen in geheugen, niet op disk.
 De backend kan ook een connectie maken naar een MySQL databank. De credentials worden voorzien in de vorm van omgevingsvariabelen. Je zal in de code op zoek moeten gaan naar welke variabelen gebruikt worden (tip: gebruik `grep`).
 
 De frontend is een statische applicatie en luistert op poort 80. Via AJAX calls wordt de API aangeroepen. De API wordt aangesproken via een pad /api. Je hoeft zelf geen NGINX config te schrijven om dit in orde te brengen, maar je moet wel in de bestaande config file zoeken naar hints rond hoe je dit aan de praat krijgt.
